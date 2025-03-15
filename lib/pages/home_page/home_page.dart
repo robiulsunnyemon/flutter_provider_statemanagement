@@ -21,7 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Count is ${context.watch<CounterProvider>().count}"),
+          Text("Count is ${context.watch<CounterProvider>().count}",style: TextStyle(fontWeight: FontWeight.bold),),
           SizedBox(height: 30,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
