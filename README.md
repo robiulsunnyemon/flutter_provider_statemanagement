@@ -1,4 +1,4 @@
-# providerproject
+# Learn provider state management project
 
 A new Flutter project.
 
