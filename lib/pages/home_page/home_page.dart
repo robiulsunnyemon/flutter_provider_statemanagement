@@ -21,17 +21,37 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Count is ${context.watch<CounterProvider>().count}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-          SizedBox(height: 30,),
+          RichText(
+              text: TextSpan(
+                text: "Count is: ",
+                children: [
+                  TextSpan(
+                    text: "${context.watch<CounterProvider>().count}",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,color: Colors.blue),
+                  )
+                ],
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,color: Colors.red),
+              )
+          ),
+
+          SizedBox(
+            height: 30,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              FloatingActionButton(onPressed: (){
-                context.read<CounterProvider>().incrementCounter();
-              },child: Icon(Icons.add),),
-              FloatingActionButton(onPressed: (){
-                context.read<CounterProvider>().decrementCounter();
-              },child: Icon(Icons.remove),),
+              FloatingActionButton(
+                onPressed: () {
+                  context.read<CounterProvider>().incrementCounter();
+                },
+                child: Icon(Icons.add),
+              ),
+              FloatingActionButton(
+                onPressed: () {
+                  context.read<CounterProvider>().decrementCounter();
+                },
+                child: Icon(Icons.remove),
+              ),
             ],
           )
         ],
